@@ -56,13 +56,10 @@ const Navbar = () => {
           <ul className="flex flex-col md:flex-row md:ml-auto md:gap-3 md:divide-y-0 divide-y divide-gray-100 w-full md:w-auto md:p-0 p-1 mb-2 md:mb-0">
             {navLinks.map((links) => {
               return (
-                <li
-                  key={links.title}
-                  className="px-4 py-4"
-                  onClick={() => setOpen(!open)}
-                >
+                <li key={links.title} onClick={() => setOpen(!open)}>
                   <NavLink
                     to={links.href}
+                    className="px-4 py-4"
                     style={({ isActive }) => ({
                       color: isActive ? "#2f5ce8" : "black",
                       fontWeight: isActive ? "600" : "400",
