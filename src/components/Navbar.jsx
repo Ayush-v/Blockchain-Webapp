@@ -1,6 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
-import { useEffect } from "react";
 import { MenuAlt1Icon, XIcon } from "@heroicons/react/outline";
 import { Logo } from "./Logo";
 import { motion } from "framer-motion";
@@ -13,14 +12,6 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (open === true) {
-      document.querySelector("body").style.position = "fixed";
-    } else if (open === false) {
-      document.querySelector("body").style.position = "initial";
-    }
-  }, [open]);
 
   return (
     <motion.header

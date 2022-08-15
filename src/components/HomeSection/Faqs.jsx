@@ -1,10 +1,11 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 import Illustration from "assets/illustrations/faqs.png";
+import Container from "components/Container";
 
 const Faqs = () => {
   return (
-    <div className="max-w-screen-xl mx-auto my-14 px-8 py-24">
+    <Container>
       <h1 className="text-4xl font-semibold text-center">
         Frequently Asked Questions (FAQs)
       </h1>
@@ -45,7 +46,7 @@ const Faqs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -1,5 +1,6 @@
 import Illustration from "assets/diagram.webp";
 import Illustration2 from "assets/image.webp";
+import Container from "components/Container";
 
 const Data = [
   {
@@ -34,7 +35,7 @@ const Data = [
 
 const HowitWorks = () => {
   return (
-    <div className="max-w-screen-xl mx-auto my-14 px-8 py-24">
+    <Container>
       <div className="text-center">
         <h1 className="text-4xl font-semibold">How Does a Blockchain Work?</h1>
         <p className="text-slate-400 max-w-3xl mx-auto mt-3">
@@ -69,7 +70,7 @@ const HowitWorks = () => {
           <img src={Illustration2} alt="" className="p-4 object-fit" />
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

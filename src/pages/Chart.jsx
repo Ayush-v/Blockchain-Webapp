@@ -72,8 +72,25 @@ const Chart = () => {
     ],
   };
 
-  var options = {
-    maintainAspectRatio: false,
+  // var options = {
+  //   responsive: true,
+  //   scales: {
+  //     x: {
+  //       beginAtZero: true,
+
+  //       ticks: {
+  //         display: false,
+  //       },
+  //     },
+  //   },
+  //   legend: {
+  //     labels: {
+  //       fontSize: 25,
+  //     },
+  //   },
+  // };
+  const options = {
+    responsive: true,
     scales: {
       x: {
         beginAtZero: true,
@@ -83,9 +100,13 @@ const Chart = () => {
         },
       },
     },
-    legend: {
-      labels: {
-        fontSize: 25,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "All transaction data from Blockchain.com",
       },
     },
   };
@@ -97,7 +118,7 @@ const Chart = () => {
         {error && error}
         {loading ? <Spinner /> : null}
         <div>
-          <Line options={options} height={600} data={data} />
+          <Line options={options} data={data} />
         </div>
       </div>
     </Container>

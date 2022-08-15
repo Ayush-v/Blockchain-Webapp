@@ -38,7 +38,7 @@ export function Hero() {
 
   return (
     <>
-      <section className="flex flex-col items-center my-12">
+      <div className="flex flex-col items-center my-12">
         <div className="flex md:flex-row flex-col gap-8 items-center justify-center max-w-screen-xl mx-auto py-20 px-8">
           <div className="relative">
             <motion.div
@@ -69,7 +69,7 @@ export function Hero() {
             transition={{ duration: 1 }}
           ></motion.div>
         </div>
-      </section>
+      </div>
     </>
   );
 }
