@@ -6,12 +6,12 @@ import Illustration from "assets/illustrations/faqs.png";
 const Faqs = () => {
   return (
     <Container>
-      <h1 className="text-4xl">Frequently Asked Questions</h1>
+      <h1 className="text-4xl font-semibold">Frequently Asked Questions</h1>
 
       <div className="flex flex-col lg:flex-row my-6 gap-8 items-center">
         <img src={Illustration} alt="" className="max-h-60 p-4 object-fit" />
-        <div className="w-full px-4">
-          <div className="mx-auto w-full rounded-2xl bg-white p-2">
+        <div className="w-full sm:px-4">
+          <div className="mx-auto w-full rounded-2xl bg-white sm:p-2">
             {allFaqs.map((faqs) => (
               <Disclosure as="div" key={faqs.title} className="my-8">
                 {({ open }) => (

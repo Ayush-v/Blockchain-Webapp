@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 
 const navLinks = [
   { title: "Home", href: "/" },
-  { title: "Home2", href: "/dfg" },
-  { title: "Home23", href: "/dsfg" },
+  { title: "Charts", href: "/chart" },
+  { title: "Exchanges", href: "/exchanges" },
 ];
 
 const Navbar = () => {
