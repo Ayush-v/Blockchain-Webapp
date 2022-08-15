@@ -13,6 +13,7 @@ const Exchanges = () => {
 
   useEffect(() => {
     setLoading(true);
+    // Fething data of all the Exchange Rates API
     client("https://blockchain.info/ticker")
       .then((data) => {
         setData(data);
@@ -25,6 +26,7 @@ const Exchanges = () => {
       });
   }, []);
 
+  // Handling form submit for coverting currency value to BTC
   function Exchange(e) {
     e.preventDefault();
     setLoading(true);
@@ -49,10 +51,11 @@ const Exchanges = () => {
         {error && error}
         <div>
           <h2 className="text-3xl mt-3">Convert USD to Bitcoin</h2>
-          <h3 className="text-xl">
-            Value in BTC after conversion :{exchangedValue}
-          </h3>
+          <h3 className="text-xl">Value in BTC :{exchangedValue}</h3>
           {loading ? <Spinner /> : null}
+
+          {/* Form for currency value convertion */}
+
           <form onSubmit={Exchange}>
             <div className="flex px-4 py-3 gap-3">
               <select
@@ -88,6 +91,9 @@ const Exchanges = () => {
             </div>
           </form>
         </div>
+
+        {/* Displaying all the data from Exchange Rates API */}
+
         <div>
           <h1 className="text-4xl my-5">
             Exchange Rates of different Countries

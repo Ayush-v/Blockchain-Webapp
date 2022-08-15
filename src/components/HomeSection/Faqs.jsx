@@ -14,6 +14,7 @@ const Faqs = () => {
         <img src={Illustration} alt="" className="max-h-60 p-4 object-fit" />
         <div className="w-full sm:px-4">
           <div className="mx-auto w-full rounded-2xl bg-white sm:p-2">
+            {/* Mapping all faqs from array below */}
             {allFaqs.map((faqs) => (
               <Disclosure as="div" key={faqs.title} className="my-8">
                 {({ open }) => (
@@ -51,6 +52,8 @@ const Faqs = () => {
 };
 
 export default Faqs;
+
+// All Faqs
 
 const allFaqs = [
   {

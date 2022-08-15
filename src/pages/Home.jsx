@@ -6,6 +6,7 @@ import Meaning from "components/HomeSection/Meaning";
 const Home = () => {
   return (
     <main>
+      {/* All the components from Components/HomeSection */}
       <Hero />
       <Meaning />
       <HowitWorks />

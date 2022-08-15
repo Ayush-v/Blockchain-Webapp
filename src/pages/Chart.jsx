@@ -14,6 +14,7 @@ import client from "utils/api-client";
 import Spinner from "components/Spinner";
 import Container from "components/Container";
 
+// configuring ChartJS
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -28,6 +29,7 @@ const Chart = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // fething data form blockchain Api
   useEffect(() => {
     setLoading(true);
     client(
@@ -72,23 +74,7 @@ const Chart = () => {
     ],
   };
 
-  // var options = {
-  //   responsive: true,
-  //   scales: {
-  //     x: {
-  //       beginAtZero: true,
-
-  //       ticks: {
-  //         display: false,
-  //       },
-  //     },
-  //   },
-  //   legend: {
-  //     labels: {
-  //       fontSize: 25,
-  //     },
-  //   },
-  // };
+  // All the configuration of chart
   const options = {
     responsive: true,
     scales: {
@@ -118,7 +104,7 @@ const Chart = () => {
         {error && error}
         {loading ? <Spinner /> : null}
         <div>
-          <Line options={options} data={data} />
+          <Line options={options} data={data} height={800} />
         </div>
       </div>
     </Container>

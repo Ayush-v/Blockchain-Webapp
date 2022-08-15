@@ -7,7 +7,9 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
+      {/* Layout for navbar and footer */}
       <Layout>
+        {/* All Routes */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/chart" element={<Chart />} />

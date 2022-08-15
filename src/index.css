@@ -11,6 +11,7 @@
   }
 }
 
+/* Responsiveness for navbar */
 @media (max-width: 768px) {
   .primary-navigation {
     transition: 0.3s ease-in-out;
@@ -28,6 +29,7 @@
   }
 }
 
+/* Spinner css */
 .loader {
   width: 24px;
   height: 24px;

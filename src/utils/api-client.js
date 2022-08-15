@@ -1,3 +1,5 @@
+// Function for any type of fetch requests
+
 function client(endpoint, customConfig = {}) {
   const config = {
     method: "GET",
