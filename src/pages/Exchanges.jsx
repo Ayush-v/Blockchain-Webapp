@@ -1,3 +1,4 @@
+import Spinner from "components/Spinner";
 import { useEffect, useRef, useState } from "react";
 import client from "utils/api-client";
 
@@ -6,25 +7,45 @@ const Exchanges = () => {
   const currency = useRef(null);
   const [currencyValue, setCurrencyValue] = useState(0);
   const [exchangedValue, setExchangedValue] = useState("");
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    client("https://blockchain.info/ticker").then((data) => {
-      setData(data);
-    });
+    setLoading(true);
+    client("https://blockchain.info/ticker")
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err);
+        setLoading(false);
+      });
   }, []);
 
   function Exchange(e) {
     e.preventDefault();
+    setLoading(true);
     client(
       `https://blockchain.info/tobtc?currency=${currency.current.value}&value=${currencyValue}`
-    ).then((data) => {
-      setExchangedValue(data);
-    });
+    )
+      .then((data) => {
+        setExchangedValue(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        setError(err);
+      });
   }
 
   return (
     <div className="mx-8 pt-8">
       <h1 className="text-4xl">Market Prices and exchanges rates</h1>
+      {error && error}
+      {loading ? <Spinner /> : null}
       <div>
         <h2 className="text-3xl mt-3">Convert USD to Bitcoin</h2>
         <h3 className="text-xl">
@@ -58,6 +79,7 @@ const Exchanges = () => {
             <button
               type="submit"
               className="bg-blue-600 p-2 rounded-md text-white"
+              disabled={loading}
             >
               Submit
             </button>
