@@ -92,14 +92,14 @@ const Chart = () => {
 
   return (
     <Container>
-      <>
+      <div>
         <h1 className="text-4xl">Graphical Representation of Transcations</h1>
         {error && error}
         {loading ? <Spinner /> : null}
         <div>
-          <Line data={data} height={400} options={options} />
+          <Line options={options} height={600} data={data} />
         </div>
-      </>
+      </div>
     </Container>
   );
 };

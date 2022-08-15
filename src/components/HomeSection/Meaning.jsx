@@ -1,9 +1,8 @@
-import Container from "components/Container";
 import Illustration from "assets/illustrations/question.svg";
 
 const Meaning = () => {
   return (
-    <Container>
+    <div className="max-w-screen-xl mx-auto my-14 px-8 py-24">
       <div className="flex gap-4 flex-col lg:flex-row justify-center items-center">
         <div className="p-4">
           <h1 className="text-5xl grow basis-0">What Even is Blockchain?</h1>
@@ -32,7 +31,7 @@ const Meaning = () => {
           <br />
         </p>
       </div>
-    </Container>
+    </div>
   );
 };
 
