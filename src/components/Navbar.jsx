@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const navLinks = [
   { title: "Home", href: "/" },
   { title: "Charts", href: "/chart" },
-  { title: "Exchanges", href: "/exchanges" },
+  { title: "Try this!", href: "/exchanges" },
 ];
 
 const Navbar = () => {
@@ -53,24 +53,23 @@ const Navbar = () => {
           data-visible={open ? "true" : "false"}
           className="absolute top-12 right-6 md:relative md:top-0 md:right-0 flex flex-col items-center md:flex-row md:w-full w-52  shadow-lg rounded-lg mt-2 md:shadow-none divide-y md:divide-y-0 divide-gray-100 primary-navigation z-50 bg-white md:bg-transparent"
         >
-          <ul className="flex flex-col md:flex-row md:ml-auto md:gap-3 md:divide-y-0 divide-y divide-gray-100 w-full md:w-auto md:p-0 p-1 mb-2 md:mb-0">
+          <div className="flex flex-col md:flex-row md:ml-auto md:gap-3 md:divide-y-0 divide-y divide-gray-100 w-full md:w-auto md:p-0 p-1 mb-2 md:mb-0">
             {navLinks.map((links) => {
               return (
-                <li key={links.title} onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to={links.href}
-                    className="px-4 py-4"
-                    style={({ isActive }) => ({
-                      color: isActive ? "#2f5ce8" : "black",
-                      fontWeight: isActive ? "600" : "400",
-                    })}
-                  >
-                    {links.title}
-                  </NavLink>
-                </li>
+                <NavLink
+                  key={links.title}
+                  to={links.href}
+                  onClick={() => setOpen(!open)}
+                  className="px-4 py-4"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#2f5ce8" : "black",
+                  })}
+                >
+                  {links.title}
+                </NavLink>
               );
             })}
-          </ul>
+          </div>
         </nav>
       </div>
     </motion.header>

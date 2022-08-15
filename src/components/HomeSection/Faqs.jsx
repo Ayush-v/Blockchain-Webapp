@@ -6,7 +6,9 @@ import Illustration from "assets/illustrations/faqs.png";
 const Faqs = () => {
   return (
     <Container>
-      <h1 className="text-4xl font-semibold">Frequently Asked Questions</h1>
+      <h1 className="text-4xl font-semibold text-center">
+        Frequently Asked Questions (FAQs)
+      </h1>
 
       <div className="flex flex-col lg:flex-row my-6 gap-8 items-center">
         <img src={Illustration} alt="" className="max-h-60 p-4 object-fit" />
