@@ -5,6 +5,11 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <div className="mt-16">{children}</div>
+      <footer className="mt-auto">
+        <p className="flex justify-center text-slate-500 my-6">
+          © 2022 All rights reserved by Ayush-v
+        </p>
+      </footer>
     </>
   );
 };

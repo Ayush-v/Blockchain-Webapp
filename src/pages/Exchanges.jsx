@@ -26,8 +26,10 @@ const Exchanges = () => {
     <div className="mx-8 pt-8">
       <h1 className="text-4xl">Market Prices and exchanges rates</h1>
       <div>
-        <h1>Convert USD to Bitcoin</h1>
-        <h1>Value in BTC after conversion :{exchangedValue}</h1>
+        <h2 className="text-3xl mt-3">Convert USD to Bitcoin</h2>
+        <h3 className="text-xl">
+          Value in BTC after conversion :{exchangedValue}
+        </h3>
         <form onSubmit={Exchange}>
           <div className="flex px-4 py-3 gap-3">
             <select
@@ -51,7 +53,6 @@ const Exchanges = () => {
               onChange={(e) => setCurrencyValue(e.target.value)}
               placeholder="value to convert"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              required
             />
 
             <button
@@ -65,18 +66,24 @@ const Exchanges = () => {
       </div>
       <div>
         <h1 className="text-4xl my-5">Exchange Rates of different Countries</h1>
-        <div className="flex flex-wrap gap-4 justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4 content-center place-content-center">
           {data &&
             Object.keys(data).map((rates, idx) => (
               <div
                 key={idx}
-                className="bg-white shadow-md m-1 w-fit p-4 rounded-md"
+                className="bg-white shadow-md w-full p-4 rounded-md"
               >
-                <h1>{rates}</h1>
-                <p>last: {data[rates].last}</p>
-                <p>buy: {data[rates].buy}</p>
-                <p>sell: {data[rates].sell}</p>
-                <p>symbol: {data[rates].symbol}</p>
+                <h1 className="text-xl">{rates}</h1>
+                <div className="flex gap-2">
+                  <p className="text-red-400">sell: {data[rates].sell}</p>
+                  <p className="text-green-400">buy: {data[rates].buy}</p>
+                </div>
+                <div className="flex gap-2">
+                  <p className="text-purple-400">last: {data[rates].last}</p>
+                  <p className="text-slate-400">
+                    symbol: "{data[rates].symbol}"
+                  </p>
+                </div>
               </div>
             ))}
         </div>
